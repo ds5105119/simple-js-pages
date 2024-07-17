@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-style: normal;
+        }
+
+        .root {
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            padding: 30px 40px 30px 40px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 18px;
+            margin: 10px 0px 10px 0px;
+        }
+
+        .button {
+            align-items: center;
+            box-sizing: border-box;
+            border-radius: 30px;
+            padding: 8px 20px 8px 20px;
+            border: 1px solid #AAAAAA;
+        }
+
+        .button:hover {
+            transition-duration: 300ms;
+            background-color: rgba(0, 122, 255, 0.25);
+        }
+
+        .profile-discript {
+            flex: 1 0 auto;
+            display: block;
+            margin: 30px 0 30px 30px;
+        }
+
+        .profile-discript-child {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 200px;
+        }
+
+        .b1 {
+            position: relative;
+            font-weight: 600;
+            font-size: 23px;
+            line-height: 24px;
+        }
+
+        .b2 {
+            position: relative;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 30px;
+            color: #4a4a4a
+        }
+
+        .b3 {
+            position: relative;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 24px;
+        }
+
+        .b4 {
+            position: relative;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 20px;
+            margin-bottom: 10px;
+        }
+
+        .h2 {
+            position: relative;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 24px;
+            color: #007AFF
+        }
+
+        .h4 {
+            position: relative;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 24px;
+            color: #007AFF
+        }
+
+        .hr {
+            flex: 1 0 auto;
+            width: 100%;
+            margin-top: 14px;
+            margin-bottom: 14px;
+            background: #007AFF;
+            height: 1px;
+            border: 0;
+        }
+
+        .callout {
+            flex: 1 0 auto;
+            align-items: center;
+            box-sizing: border-box;
+            border-radius: 12px;
+            padding: 8px;
+            margin: 5px 0px 5px 0px
+        }
+
+        .type1 {
+            background-color: rgba(0, 122, 255, 0.15);
+        }
+
+        .type2 {
+            background-color: rgba(175, 214, 255, 0.15);
+        }
+
+        .type1:hover {
+            transition-duration: 300ms;
+            background-color: rgba(0, 122, 255, 0.25);
+        }
+
+        .type1:active {
+            transition-duration: 100ms;
+            background-color: rgba(0, 122, 255, 0.5);
+        }
+
+        .callout-emoji {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .callout-text {
+            position: relative;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 30px;
+            color: #040404
+        }
+
+        .callout-link {
+            margin-left: 5px;
+            position: relative;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 30px;
+            color: #040404
+        }
+
+        .rect-text {
+            font-weight: 500;
+            width: max-content;
+            align-items: center;
+            padding: 4px 10px 3px 10px;
+            background-color: rgb(175, 214, 255);
+            color: rgb(0, 122, 255);
+            margin: 0px 0px 10px 0px;
+        }
+    </style>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" />
+</head>
+
+<body class="root">
+    <div class="header">
+        <img class="profile-image" src="/logo.png" />
+        <div class="profile-discript">
+            <div>
+                <span class="b1">
+                    김동현
+                </span>
+                <span class="h4">
+                    Kim Dong Hyeon
+                </span>
+            </div>
+
+            <hr class="hr">
+
+            <div class="profile-discript-child">
+                <div class="b2"> 전화번호 </div>
+                <div class="b3"> 010-XXXX-XXXX </div>
+            </div>
+            <div class="profile-discript-child">
+                <div class="b2"> 이메일 </div>
+                <div class="b3"> test@testmail.com </div>
+            </div>
+            <div class="profile-discript-child">
+                <div class="b2"> 경력 사항 </div>
+                <div class="b3"> 신입 </div>
+            </div>
+
+            <div class="callout type1">
+                <span class="callout-emoji">🔗</span>
+                <span class="callout-text">기술 블로그</span>
+                <a href="https://iihus.com" class="callout-link">https://iihus.com</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="h2">Introduction</div>
+    <hr class="hr">
+    <div class="b4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula magna ac purus posuere, non tempus
+        nulla eleifend. Fusce ac justo vitae velit malesuada auctor. Maecenas tincidunt metus ut ex auctor, non
+        tincidunt arcu efficitur. Sed at felis et sapien lacinia tincidunt. Proin imperdiet massa nec diam scelerisque,
+        et euismod nunc hendrerit. Nam efficitur mi id dolor tincidunt, sed facilisis felis viverra. Donec vitae
+        ultricies velit.
+    </div>
+    <div class="b4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula magna ac purus posuere, non tempus
+        nulla eleifend. Fusce ac justo vitae velit malesuada auctor. Maecenas tincidunt metus ut ex auctor, non
+        tincidunt arcu efficitur. Sed at felis et sapien lacinia tincidunt. Proin imperdiet massa nec diam scelerisque,
+        et euismod nunc hendrerit. Nam efficitur mi id dolor tincidunt, sed facilisis felis viverra. Donec vitae
+        ultricies velit.
+    </div>
+
+    <div class="skills">
+        <div class="h2">Skills</div>
+        <div class="button type2">Python</div>
+        <div class="button type2">Django</div>
+    </div>
+
+    <div class="h2">Project</div>
+    <hr class="hr">
+    <div class="rect-text">프로젝트 예시</div>
+    <div class="b4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula magna ac purus posuere, non tempus
+        nulla eleifend. Fusce ac justo vitae velit malesuada auctor. Maecenas tincidunt metus ut ex auctor, non
+        tincidunt arcu efficitur. Sed at felis et sapien lacinia tincidunt. Proin imperdiet massa nec diam scelerisque,
+        et euismod nunc hendrerit. Nam efficitur mi id dolor tincidunt, sed facilisis felis viverra. Donec vitae
+        ultricies velit.
+    </div>
+
+    <div class="callout type1">
+        <span class="callout-emoji">🔗</span>
+        <span class="callout-text">깃허브 링크</span>
+        <a href="https://github.com/drids5105119" class="callout-link">github.com/drids5105119</a>
+    </div>
+
+    <div class="callout type1">
+        <span class="callout-emoji">🔗</span>
+        <span class="callout-text">프로젝트 링크</span>
+        <a href="https://iihus.com" class="callout-link">iihus.com</a>
+    </div>
+
+    <div class="callout type1">
+        <span class="callout-emoji">🔗</span>
+        <span class="callout-text">프로젝트 SNS 링크</span>
+        <a href="https://instagram.com" class="callout-link">instagram.com</a>
+    </div>
+
+</body>
+
+</html>
