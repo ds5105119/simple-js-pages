@@ -25,7 +25,10 @@
 </head>
 
 <body>
-
+    <div style="position: absolute; top: 10px; left: 10px;">
+        <span>←→: 왼쪽 오른쪽 이동, ↑↓: 위 아래 이동,</span>
+        <span id="timer" style="color: red;"></span>
+    </div>
     <div class="target"></div>
 
     <template id="lightning-template">
@@ -109,6 +112,8 @@
 
         function play() {
             const targetPos = target.getBoundingClientRect();
+            document.getElementById('timer').textContent = (Date.now() - gameStart) / 1000;
+
             if (keys === 'ArrowRight') {
                 if (!(targetPos.right + 20 > window.innerWidth)) {
                     posX += targetSpeed;
