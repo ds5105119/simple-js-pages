@@ -18,8 +18,8 @@
 
         .lightning {
             position: absolute;
-            width: 22px;
-            height: 22px;
+            width: 30px;
+            height: 30px;
         }
     </style>
 </head>
@@ -30,7 +30,7 @@
 
     <template id="lightning-template">
         <div class="lightning">
-            <svg width="22" height="22" viewBox="0 0 128 128">
+            <svg width="30" height="30" viewBox="0 0 128 128">
                 <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="45.0745" x2="84.0146" y1="34.7376"
                     y2="102.184">
                     <stop offset="0" stop-color="#ffeb3b" />
@@ -51,8 +51,11 @@
         let keys = '';
         let posX = 0;
         let posY = window.innerHeight - 200;
+        let targetSpeed = 7;
 
         let playId = 0;
+        let createLightningInterval;
+        let moveLightningInterval;
         let gameStart = 0;
 
         // 초기 위치로 이동
@@ -73,7 +76,7 @@
             const lightningClone = document.importNode(document.querySelector('#lightning-template').content, true);
             const lightning = lightningClone.querySelector('.lightning');
 
-            lightning.style.left = `${randomint(1, window.innerWidth - 30)}px`;
+            lightning.style.left = `${randomint(1, window.innerWidth - 40)}px`;
             lightning.style.top = '1px';
 
             document.querySelector('body').append(lightning);
@@ -83,7 +86,7 @@
             const lightnings = document.querySelectorAll('.lightning');
             lightnings.forEach(lightning => {
                 const currentTop = parseFloat(lightning.style.top);
-                if (currentTop + 30 >= window.innerHeight) {
+                if (currentTop + 40 >= window.innerHeight) {
                     lightning.remove();
                 } else {
                     lightning.style.top = `${currentTop + 1}px`;
@@ -108,28 +111,28 @@
             const targetPos = target.getBoundingClientRect();
             if (keys === 'ArrowRight') {
                 if (!(targetPos.right + 20 > window.innerWidth)) {
-                    posX += 5;
+                    posX += targetSpeed;
                     target.style.transform = `translate(${posX}px, ${posY}px)`;
                 }
             }
 
             if (keys === 'ArrowLeft') {
                 if (!(targetPos.left < 0)) {
-                    posX -= 5;
+                    posX -= targetSpeed;
                     target.style.transform = `translate(${posX}px, ${posY}px)`;
                 }
             }
 
             if (keys === 'ArrowUp') {
                 if (!(targetPos.top < 0)) {
-                    posY -= 5;
+                    posY -= targetSpeed;
                     target.style.transform = `translate(${posX}px, ${posY}px)`;
                 }
             }
 
             if (keys === 'ArrowDown') {
                 if (!(targetPos.bottom + 10 > window.innerHeight)) {
-                    posY += 5;
+                    posY += targetSpeed;
                     target.style.transform = `translate(${posX}px, ${posY}px)`;
                 }
             }
@@ -137,9 +140,9 @@
             requestAnimationFrame(play);
         }
 
-        function main() {
+        function start() {
             gameStart = Date.now();
-            createLightningInterval = setInterval(createLightning, 90);
+            createLightningInterval = setInterval(createLightning, 80);
             moveLightningInterval = setInterval(moveLightnings, 5);
             playId = requestAnimationFrame(play);
         }
@@ -149,11 +152,21 @@
 
             clearInterval(createLightningInterval);
             clearInterval(moveLightningInterval);
-            cancelAnimationFrame(playId);
-            alert(`Game Over, ${millis / 1000}초 버텼습니다. 새로 고침으로 다시 시작.`);
+            stop();
+
+            const lightnings = document.querySelectorAll('.lightning');
+            lightnings.forEach(lightning => {
+                lightning.remove();
+            });
+
+            alert(`Game Over, ${millis / 1000}초 버텼습니다.`);
+
+            gameStart = Date.now();
+            createLightningInterval = setInterval(createLightning, 80);
+            moveLightningInterval = setInterval(moveLightnings, 5);
         }
 
-        main();
+        start();
 
     </script>
 </body>
