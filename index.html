@@ -14,7 +14,6 @@
             width: 50px;
             height: 50px;
             background-color: teal;
-            /* transition: 0.2s; */
         }
 
         .lightning {
@@ -74,8 +73,8 @@
             const lightningClone = document.importNode(document.querySelector('#lightning-template').content, true);
             const lightning = lightningClone.querySelector('.lightning');
 
-            lightning.style.left = `${randomint(0, window.innerWidth - 50)}px`;
-            lightning.style.top = '0px';
+            lightning.style.left = `${randomint(1, window.innerWidth - 30)}px`;
+            lightning.style.top = '1px';
 
             document.querySelector('body').append(lightning);
         }
@@ -84,7 +83,7 @@
             const lightnings = document.querySelectorAll('.lightning');
             lightnings.forEach(lightning => {
                 const currentTop = parseFloat(lightning.style.top);
-                if (currentTop + 5 >= window.innerHeight) {
+                if (currentTop + 25 >= window.innerHeight) {
                     lightning.remove();
                 } else {
                     lightning.style.top = `${currentTop + 1}px`;
