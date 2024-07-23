@@ -18,8 +18,8 @@
 
         .lightning {
             position: absolute;
-            width: 18px;
-            height: 18px;
+            width: 22px;
+            height: 22px;
         }
     </style>
 </head>
@@ -30,7 +30,7 @@
 
     <template id="lightning-template">
         <div class="lightning">
-            <svg width="18" height="18" viewBox="0 0 128 128">
+            <svg width="22" height="22" viewBox="0 0 128 128">
                 <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="45.0745" x2="84.0146" y1="34.7376"
                     y2="102.184">
                     <stop offset="0" stop-color="#ffeb3b" />
@@ -83,7 +83,7 @@
             const lightnings = document.querySelectorAll('.lightning');
             lightnings.forEach(lightning => {
                 const currentTop = parseFloat(lightning.style.top);
-                if (currentTop + 25 >= window.innerHeight) {
+                if (currentTop + 30 >= window.innerHeight) {
                     lightning.remove();
                 } else {
                     lightning.style.top = `${currentTop + 1}px`;
